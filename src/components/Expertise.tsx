@@ -1,90 +1,90 @@
 import React from "react";
-import '@fortawesome/free-regular-svg-icons'
+import '@fortawesome/free-regular-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faReact, faDocker, faPython } from '@fortawesome/free-brands-svg-icons';
 import Chip from '@mui/material/Chip';
 import '../assets/styles/Expertise.scss';
 
-const labelsFirst = [
-    "React",
-    "TypeScript",
-    "JavaScript",
+const labelsFrontend = [
     "HTML5",
     "CSS3",
-    "SASS",
-    "Flask",
+    "SCSS",
+    "JavaScript",
+    "TypeScript",
+    "Angular",
+    "React"
+];
+
+const labelsBackend = [
     "Python",
-    "SQL",
+    "Flask",
     "PostgreSQL",
-    "Postman"
+    "REST APIs",
+    "JWT Auth"
 ];
 
-const labelsSecond = [
+const labelsTools = [
     "Git",
-    "GitHub Actions",
-    "Docker",
-    "AWS",
-    "Azure",
-    "Linux",
-    "Snowflake",
-    "Pandas",
-    "Selenium",
-];
-
-const labelsThird = [
-    "OpenAI",
-    "Groq",
-    "LangChain",
-    "Qdrant",
-    "Hugging Face",
-    "LlamaIndex",
-    "Streamlit",
+    "GitHub",
+    "VS Code",
+    "Postman",
+    "Docker (basic)",
+    "Netlify",
+    "Figma" // ✅ Figma added here
 ];
 
 function Expertise() {
     return (
-    <div className="container" id="expertise">
-        <div className="skills-container">
-            <h1>Expertise</h1>
-            <div className="skills-grid">
-                <div className="skill">
-                    <FontAwesomeIcon icon={faReact} size="3x"/>
-                    <h3>Full Stack Web Development</h3>
-                    <p>I have built a diverse array of web applications from scratch using modern technologies such as React and Flask. I have a strong proficiency in the SDLC process and frontend + backend development.</p>
-                    <div className="flex-chips">
-                        <span className="chip-title">Tech stack:</span>
-                        {labelsFirst.map((label, index) => (
-                            <Chip key={index} className='chip' label={label} />
-                        ))}
-                    </div>
-                </div>
+        <div className="container" id="expertise">
+            <div className="skills-container">
+                <h1>Expertise</h1>
+                <div className="skills-grid">
 
-                <div className="skill">
-                    <FontAwesomeIcon icon={faDocker} size="3x"/>
-                    <h3>DevOps & Automation</h3>
-                    <p>Once the application is built, I help clients set up DevOps testing, CI/CD pipelines, and deployment automation to support the successful Go-Live.</p>
-                    <div className="flex-chips">
-                        <span className="chip-title">Tech stack:</span>
-                        {labelsSecond.map((label, index) => (
-                            <Chip key={index} className='chip' label={label} />
-                        ))}
+                    <div className="skill">
+                        <FontAwesomeIcon icon={faReact} size="3x" />
+                        <h3>Frontend Development</h3>
+                        <p>
+                            At Shaper, I learned to build responsive and interactive user interfaces using modern frontend tools. I'm confident in working with Angular, React, and TypeScript to create clean and functional designs.
+                        </p>
+                        <div className="flex-chips">
+                            <span className="chip-title">Technologies:</span>
+                            {labelsFrontend.map((label, index) => (
+                                <Chip key={index} className="chip" label={label} />
+                            ))}
+                        </div>
                     </div>
-                </div>
 
-                <div className="skill">
-                    <FontAwesomeIcon icon={faPython} size="3x"/>
-                    <h3>GenAI & LLM</h3>
-                    <p>Stay relevant in the market by leveraging the latest AI models in your projects. I have professional experience building enterprise grade GenAI-enabled solutions to empower intelligent decision making.</p>
-                    <div className="flex-chips">
-                        <span className="chip-title">Tech stack:</span>
-                        {labelsThird.map((label, index) => (
-                            <Chip key={index} className='chip' label={label} />
-                        ))}
+                    <div className="skill">
+                        <FontAwesomeIcon icon={faPython} size="3x" />
+                        <h3>Backend Development</h3>
+                        <p>
+                            I’ve built secure and scalable APIs using Python and Flask. I also implemented user authentication with JWT and connected apps to PostgreSQL databases.
+                        </p>
+                        <div className="flex-chips">
+                            <span className="chip-title">Technologies:</span>
+                            {labelsBackend.map((label, index) => (
+                                <Chip key={index} className="chip" label={label} />
+                            ))}
+                        </div>
                     </div>
+
+                    <div className="skill">
+                        <FontAwesomeIcon icon={faDocker} size="3x" />
+                        <h3>Tools & Deployment</h3>
+                        <p>
+                            I use essential tools like Git, Postman, and VS Code daily. I also practiced deploying apps with Netlify and explored Docker basics. I design and plan UI layouts using Figma.
+                        </p>
+                        <div className="flex-chips">
+                            <span className="chip-title">Tools:</span>
+                            {labelsTools.map((label, index) => (
+                                <Chip key={index} className="chip" label={label} />
+                            ))}
+                        </div>
+                    </div>
+
                 </div>
             </div>
         </div>
-    </div>
     );
 }
 

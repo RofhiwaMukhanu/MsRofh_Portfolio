@@ -1,74 +1,101 @@
-import React from "react";
-import mock01 from '../assets/images/mock01.png';
-import mock02 from '../assets/images/mock02.png';
-import mock03 from '../assets/images/mock03.png';
-import mock04 from '../assets/images/mock04.png';
-import mock05 from '../assets/images/mock05.png';
-import mock06 from '../assets/images/mock06.png';
-import mock07 from '../assets/images/mock07.png';
-import mock08 from '../assets/images/mock08.png';
-import mock09 from '../assets/images/mock09.png';
-import mock10 from '../assets/images/mock10.png';
-import '../assets/styles/Project.scss';
+import React from 'react';
+import { Box, Typography, Grid, Card, CardMedia, CardContent, Button, Stack } from '@mui/material';
 
-function Project() {
-    return(
-    <div className="projects-container" id="projects">
-        <h1>Personal Projects</h1>
-        <div className="projects-grid">
-            <div className="project">
-                <a href="https://www.filmate.club/" target="_blank" rel="noreferrer"><img src={mock10} className="zoom" alt="thumbnail" width="100%"/></a>
-                <a href="https://www.filmate.club/" target="_blank" rel="noreferrer"><h2>Filmate AI</h2></a>
-                <p>Developed movie finder app with semantic search and sentiment analysis using OpenAI GPT-3.5 Turbo, Qdrant, React, and Flask.</p>
-            </div>
-            <div className="project">
-                <a href="https://yujisatojr.itch.io/highspeedchase" target="_blank" rel="noreferrer"><img src={mock09} className="zoom" alt="thumbnail" width="100%"/></a>
-                <a href="https://yujisatojr.itch.io/highspeedchase" target="_blank" rel="noreferrer"><h2>High Speed Chase</h2></a>
-                <p>Designed, developed, and launched a 3D multiplayer racing game with C# and Unity. This is available on Itch.io for gamers worldwide to enjoy.</p>
-            </div>
-            <div className="project">
-                <a href="https://yujisatojr.itch.io/spacecraft" target="_blank" rel="noreferrer"><img src={mock08} className="zoom" alt="thumbnail" width="100%"/></a>
-                <a href="https://yujisatojr.itch.io/spacecraft" target="_blank" rel="noreferrer"><h2>Astro Raiders</h2></a>
-                <p>Developed and released a 2D shooting game with C# and Unity. This project is hosted on the Itch.io public marketplace.</p>
-            </div>
-            <div className="project">
-                <a href="https://www.datumlearn.com/" target="_blank" rel="noreferrer"><img src={mock07} className="zoom" alt="thumbnail" width="100%"/></a>
-                <a href="https://www.datumlearn.com/" target="_blank" rel="noreferrer"><h2>Datum: Integrated Learning Platform</h2></a>
-                <p>This is an online educational platform that provides high-quality, data science-focused learning resources in the Japanese language. I created the entire platform from scratch using Ruby on Rails.</p>
-            </div>
-            <div className="project">
-                <a href="http://www.wemanage.jp/" target="_blank" rel="noreferrer"><img src={mock06} className="zoom" alt="thumbnail" width="100%"/></a>
-                <a href="http://www.wemanage.jp/" target="_blank" rel="noreferrer"><h2>WeManage: Real Estate Asset Management</h2></a>
-                <p>This mobile application allows realtors in Japan to securely manage their property information and view future income predictions. This app is built with Ruby on Rails and JavaScript.</p>
-            </div>
-            <div className="project">
-                <a href="https://www.byuh.edu/covid-19-case-management" target="_blank" rel="noreferrer"><img src={mock05} className="zoom" alt="thumbnail" width="100%"/></a>
-                <a href="https://www.byuh.edu/covid-19-case-management" target="_blank" rel="noreferrer"><h2>COVID-19 Case Management</h2></a>
-                <p>Built official charts for COVID/vaccination tracking for an educational institution using JavaScript and the Google Sheets API v4. The dashboard served the university's leadership in their decision-making processes.</p>
-            </div>
-            <div className="project">
-                <a href="https://github.com/yujisatojr/multi-reg-analysis" target="_blank" rel="noreferrer"><img src={mock04} className="zoom" alt="thumbnail" width="100%"/></a>
-                <a href="https://github.com/yujisatojr/multi-reg-analysis" target="_blank" rel="noreferrer"><h2>Multiple Regression Property Analysis</h2></a>
-                <p>Analyzed the real estate market in Japan and predicted property prices by implementing statistical methods such as OLS and multi-regression analysis. This project leveraged Python and various libraries such as Pandas, NumPy, Matplotlib, and Scikit-Learn.</p>
-            </div>
-            <div className="project">
-                <a href="https://holokai.byuh.edu/programs-of-study" target="_blank" rel="noreferrer"><img src={mock03} className="zoom" alt="thumbnail" width="100%"/></a>
-                <a href="https://holokai.byuh.edu/programs-of-study" target="_blank" rel="noreferrer"><h2>Programs of Study</h2></a>
-                <p>Designed and developed a custom component for a CMS-based platform (e.g., 'Brightspot') using Java, Handlebars, and LESS. University students can find their majors of interest through this module.</p>
-            </div>
-            <div className="project">
-                <a href="https://hookele.byuh.edu/transfer-evaluation-guidelines-and-matrix" target="_blank" rel="noreferrer"><img src={mock02} className="zoom" alt="thumbnail" width="100%"/></a>
-                <a href="https://hookele.byuh.edu/transfer-evaluation-guidelines-and-matrix" target="_blank" rel="noreferrer"><h2>Transfer Evaluation Matrix</h2></a>
-                <p>Created an interactive CSV table generator with Java, Handlebars, and LESS. This project helps transfer students to quickly identify eligible credits.</p>
-            </div>
-            <div className="project">
-                <a href="https://github.com/yujisatojr/submeowrine" target="_blank" rel="noreferrer"><img src={mock01} className="zoom" alt="thumbnail" width="100%"/></a>
-                <a href="https://github.com/yujisatojr/submeowrine" target="_blank" rel="noreferrer"><h2>Submeowrine</h2></a>
-                <p>Developed and released an Android mobile application using Java and Android Studio that runs a 2D shooting game.</p>
-            </div>
-        </div>
-    </div>
-    );
+const projects = [
+  {
+    title: "PowerRent Platform",
+    description:
+      "A peer-to-peer rental app for backup power solutions (inverters, solar panels, etc.). Built with a scalable full stack and JWT authentication.",
+    tools: ["Angular", "Flask", "PostgreSQL", "JWT", "SCSS"],
+    image: "https://trello.com/1/cards/67eb823c4e41e565431cb6bc/attachments/67eb827802fc93b57e12826d/download/PowerRent_L.png",
+    github: "https://github.com/The-DigitalAcademy/PowerRent-Frontend.git"
+  },
+  {
+    title: "Recipe App",
+    description:
+      "A simple and fun recipe management app where users can browse, view, and organize food recipes. Built with a clean interface and component-based structure.",
+    tools: ["HTML", "CSS", "JavaScript", "React"],
+    image: "https://www.dish-works.com/wp-content/uploads/Hatch-Chile-Chilaquiles_shot-1.jpg",
+    github: "https://github.com/RofhiwaMukhanu/Recipe.git"
+  },
+  {
+    title: "QuizAble",
+    description:
+      "QuizAble is a preparation quiz platform built with Angular to help candidates succeed in the recruitment process. It familiarizes users with common question types, tools, and processes they may encounter during hiring assessments.",
+    tools: ["Angular", "TypeScript", "SCSS"],
+    image: "https://trello.com/1/cards/67a9e6b567f01051594df29f/attachments/67a9fa0840776c86255777f7/download/logo.png",
+    github: "https://github.com/Tshepiso28/QuizAble.git"
+  },
+  {
+    title: "WatchMax Movie List App",
+    description:
+      "A sleek and modern movie listing app where users can browse movie posters, view details, and explore different titles. Designed with React and styled with SCSS.",
+    tools: ["React", "SCSS", "HTML", "JavaScript"],
+    image: "https://res.cloudinary.com/jerrick/image/upload/d_642250b563292b35f27461a7.png,f_jpg,fl_progressive,q_auto,w_1024/670fb5d034f7d3001eb384a1.jpg",
+    github: "https://github.com/RofhiwaMukhanu/YourLovedMovies.git"
+  }
+];
+
+export default function Projects() {
+  return (
+    <Box sx={{ backgroundColor: '#0D1117', color: '#fff', p: 4 }}>
+      <Typography variant="h4" fontWeight="bold" gutterBottom>
+        Projects
+      </Typography>
+      <Grid container spacing={3}>
+        {projects.map((project, index) => (
+          <Grid item xs={12} md={6} key={index}>
+            <Card sx={{ backgroundColor: '#161b22', color: '#fff', height: '100%' }}>
+              {project.image && (
+                <CardMedia
+                  component="img"
+                  height="300"
+                  image={project.image}
+                  alt={project.title}
+                  sx={{
+                    objectFit: 'cover',
+                    width: '100%',
+                    transition: 'transform 0.3s ease',
+                    '&:hover': {
+                      transform: 'scale(1.03)'
+                    }
+                  }}
+                />
+              )}
+              <CardContent>
+                <Typography variant="h6" fontWeight="bold">
+                  {project.title}
+                </Typography>
+                <Typography variant="body2" mt={1}>
+                  {project.description}
+                </Typography>
+                <Stack direction="row" spacing={1} mt={2} flexWrap="wrap">
+                  {project.tools.map((tool, idx) => (
+                    <Typography
+                      key={idx}
+                      variant="caption"
+                      sx={{ background: '#444', p: '4px 8px', borderRadius: 1 }}
+                    >
+                      {tool}
+                    </Typography>
+                  ))}
+                </Stack>
+                <Stack direction="row" spacing={2} mt={2}>
+                  <Button
+                    variant="outlined"
+                    size="small"
+                    href={project.github}
+                    target="_blank"
+                    sx={{ borderColor: '#fff', color: '#fff' }}
+                  >
+                    GitHub
+                  </Button>
+                </Stack>
+              </CardContent>
+            </Card>
+          </Grid>
+        ))}
+      </Grid>
+    </Box>
+  );
 }
-
-export default Project;
